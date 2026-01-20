@@ -47,9 +47,14 @@ const Footer = () => {
               <a href="https://www.facebook.com/jayrfujiwara/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              {/* Fix: Remove Instagram link or add a valid URL */}
+              <button 
+                className="social-icon-button"
+                aria-label="Instagram"
+                onClick={() => window.open('https://instagram.com', '_blank')}
+              >
                 <i className="fab fa-instagram"></i>
-              </a>
+              </button>
             </div>
           </div>
         </div>
