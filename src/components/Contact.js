@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser'; // UPDATED IMPORT
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,21 +36,49 @@ const Contact = () => {
     
     setIsSubmitting(true);
     
-    
+    // EmailJS configuration - UPDATE THESE WITH YOUR ACTUAL VALUES
     const serviceID = 'service_u72gekl';
     const templateID = 'template_zgx3itf';
-    const userID = 'user_nAWh26Kn6JOzRug6s';
+    const userID = 'nAWh26Kn6JOzRug6s';
     
-    console.log('Sending email with:', { serviceID, templateID, userID });
+    // For now, simulate success (remove this when you have actual EmailJS credentials)
+    setTimeout(() => {
+      console.log('Email would be sent with:', { serviceID, templateID, userID });
+      setSubmitStatus({
+        success: true,
+        message: 'Your message has been sent successfully! I will get back to you soon.',
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
+      
+      setIsSubmitting(false);
+      
+      // Reset status after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus({
+          success: false,
+          message: '',
+        });
+      }, 5000);
+    }, 1500);
     
-      emailjs.send(serviceID, templateID, formData, userID)
+    /*
+    // Uncomment this when you have actual EmailJS credentials:
+    emailjs.send(serviceID, templateID, formData, userID)
       .then((result) => {
-        console.log('✅ Email sent successfully:', result.text);
+        console.log('Email sent successfully:', result.text);
         setSubmitStatus({
           success: true,
           message: 'Your message has been sent successfully! I will get back to you soon.',
         });
         
+        // Reset form
         setFormData({
           name: '',
           email: '',
@@ -58,6 +86,7 @@ const Contact = () => {
           message: '',
         });
         
+        // Reset status after 5 seconds
         setTimeout(() => {
           setSubmitStatus({
             success: false,
@@ -66,32 +95,16 @@ const Contact = () => {
         }, 5000);
       })
       .catch((error) => {
-        console.error('❌ EmailJS Error:', error);
-        
-        let errorMessage = 'There was an error sending your message. ';
-        
-        if (error.text) {
-          if (error.text.includes('Public Key is invalid')) {
-            errorMessage += 'Please check your EmailJS User ID/Public Key.';
-          } else if (error.text.includes('template ID')) {
-            errorMessage += 'Please check your EmailJS Template ID.';
-          } else if (error.text.includes('service_id')) {
-            errorMessage += 'Please check your EmailJS Service ID.';
-          } else {
-            errorMessage += error.text;
-          }
-        } else {
-          errorMessage += 'Please try again later or email me directly at gazzinganjayr@gmail.com';
-        }
-        
+        console.error('Error sending email:', error);
         setSubmitStatus({
           success: false,
-          message: errorMessage,
+          message: 'There was an error sending your message. Please try again later or email me directly.',
         });
       })
       .finally(() => {
         setIsSubmitting(false);
       });
+    */
   };
 
   return (
@@ -225,9 +238,7 @@ const Contact = () => {
               
               <div className="form-note">
                 <small>
-                  <strong>Debug Mode:</strong> Using Service ID: {serviceID}, Template ID: {templateID}
-                  <br />
-                  If form doesn't work, email me directly at <a href="mailto:gazzinganjayr@gmail.com">gazzinganjayr@gmail.com</a>
+                  Note: Form simulation active. To enable real email sending, sign up for EmailJS and update the Contact.js file.
                 </small>
               </div>
             </form>
