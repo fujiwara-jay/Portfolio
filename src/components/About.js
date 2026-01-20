@@ -1,6 +1,17 @@
 import React from 'react';
 
 const About = () => {
+  // Choose ONE option for your resume path:
+
+  // OPTION 1: Google Drive link (using your file ID from previous message)
+  const resumePath = "https://drive.google.com/file/d/11fcZHU3KR4jTBHzbi-bELn5oAYG1jKY7/view?usp=sharing";
+  
+  // OPTION 2: If your file is in public/assets/pdf/ folder
+  // const resumePath = "/assets/pdf/GAZZINGAN_JULIAN_JR_RESUME.pdf";
+  
+  // OPTION 3: If your file is directly in public/ folder
+  // const resumePath = "/GAZZINGAN_JULIAN_JR_RESUME.pdf";
+
   return (
     <section id="about" className="about">
       <div className="container">
@@ -22,6 +33,18 @@ const About = () => {
               to the company and lay the foundation for my future career.
             </p>
             
+            <div className="about-actions">
+              <a 
+                href={resumePath}
+                className="btn btn-primary"
+                target="_blank" 
+                rel="noopener noreferrer"
+                download="GAZZINGAN_JULIAN_JR_RESUME.pdf"
+              >
+                <i className="fas fa-file-download"></i> View/Download Resume
+              </a>
+            </div>
+            
             <div className="education">
               <h4>Education</h4>
               <div className="education-item">
@@ -36,7 +59,7 @@ const About = () => {
               <h4>OJT Availability</h4>
               <p>Available for On-the-Job Training starting January or February 2026</p>
               <p>Duration: 600 hours (Flexible schedule)</p>
-              <p>Preference:On-site in Taguig or Makati Area</p>
+              <p>Preference: On-site in Taguig or Makati Area</p>
             </div>
           </div>
           
@@ -69,6 +92,18 @@ const About = () => {
                 <div className="info-item">
                   <span className="label">Phone:</span>
                   <span className="value">0995-197-4630</span>
+                </div>
+                <div className="info-item resume-download">
+                  <span className="label">Resume:</span>
+                  <a 
+                    href={resumePath}
+                    className="resume-link"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    download="GAZZINGAN_JULIAN_JR_RESUME.pdf"
+                  >
+                    <i className="fas fa-download"></i> Download
+                  </a>
                 </div>
               </div>
             </div>
