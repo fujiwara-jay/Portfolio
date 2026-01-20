@@ -37,9 +37,9 @@ const Contact = () => {
     setIsSubmitting(true);
     
     // EmailJS configuration - UPDATE THESE WITH YOUR ACTUAL VALUES
-    const serviceID = 'service_your_service_id';
-    const templateID = 'template_your_template_id';
-    const userID = 'user_your_public_key';
+    const serviceID = 'service_u72gekl';
+    const templateID = 'template_zgx3itf';
+    const userID = 'nAWh26Kn6JOzRug6s';
     
     // For now, simulate success (remove this when you have actual EmailJS credentials)
     setTimeout(() => {
