@@ -36,7 +36,6 @@ const Contact = () => {
       return;
     }
     
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setSubmitStatus({
@@ -48,29 +47,20 @@ const Contact = () => {
     
     setIsSubmitting(true);
     
-    // EmailJS configuration - USE YOUR ACTUAL EMAILJS CREDENTIALS HERE
-    // You need to:
-    // 1. Create an account at https://www.emailjs.com/
-    // 2. Create an email service (Gmail)
-    // 3. Create an email template
-    // 4. Get your Service ID, Template ID, and Public Key
+    const serviceID = 'service_u72gekl';
+    const templateID = 'template_zgx3itf';
+    const userID = 'nAWh26Kn6JOzRug6s';
     
-    const serviceID = 'service_u72gekl'; // Replace with your service ID
-    const templateID = 'template_zgx3itf'; // Replace with your template ID
-    const userID = 'nAWh26Kn6JOzRug6s'; // Replace with your Public Key (this is safe to expose)
-    
-    // Prepare template parameters
     const templateParams = {
-      to_name: 'Julian Gazzingan', // Your name
+      to_name: 'Julian Gazzingan',
       from_name: formData.name,
       from_email: formData.email,
       subject: formData.subject,
       message: formData.message,
       reply_to: formData.email,
-      to_email: 'gazzinganjayr@gmail.com', // Your email address
+      to_email: 'gazzinganjayr@gmail.com',
     };
     
-    // Send email using EmailJS
     emailjs.send(serviceID, templateID, templateParams, userID)
       .then((result) => {
         console.log('Email sent successfully:', result.text);
@@ -79,7 +69,6 @@ const Contact = () => {
           message: 'Your message has been sent successfully! I will get back to you soon.',
         });
         
-        // Reset form
         setFormData({
           name: '',
           email: '',
@@ -87,7 +76,6 @@ const Contact = () => {
           message: '',
         });
         
-        // Reset status after 5 seconds
         setTimeout(() => {
           setSubmitStatus({
             success: false,

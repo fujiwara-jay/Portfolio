@@ -1,17 +1,8 @@
 import React from 'react';
 
 const About = () => {
-  // Choose ONE option for your resume path:
-
-  // OPTION 1: Google Drive link (using your file ID from previous message)
-  const resumePath = "https://drive.google.com/file/d/11fcZHU3KR4jTBHzbi-bELn5oAYG1jKY7/view?usp=sharing";
+const resumePath = "https://drive.google.com/file/d/11fcZHU3KR4jTBHzbi-bELn5oAYG1jKY7/view?usp=sharing";
   
-  // OPTION 2: If your file is in public/assets/pdf/ folder
-  // const resumePath = "/assets/pdf/GAZZINGAN_JULIAN_JR_RESUME.pdf";
-  
-  // OPTION 3: If your file is directly in public/ folder
-  // const resumePath = "/GAZZINGAN_JULIAN_JR_RESUME.pdf";
-
   return (
     <section id="about" className="about">
       <div className="container">

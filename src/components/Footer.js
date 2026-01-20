@@ -4,8 +4,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const resumePath = "https://drive.google.com/file/d/11fcZHU3KR4jTBHzbi-bELn5oAYG1jKY7/view?usp=sharing";
 
-  // Function to handle smooth scrolling
-  const handleScrollTo = (sectionId) => {
+   const handleScrollTo = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

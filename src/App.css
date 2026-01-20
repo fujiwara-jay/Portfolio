@@ -1,4 +1,3 @@
-/* Loading spinner for submit button */
 .fa-spin {
   animation: fa-spin 1s infinite linear;
 }
@@ -12,7 +11,6 @@
   }
 }
 
-/* Form note styling */
 .form-note {
   margin-top: 15px;
   font-size: 0.9rem;
@@ -21,7 +19,6 @@
   font-style: italic;
 }
 
-/* App.css - ALL STYLES IN ONE FILE */
 :root {
   --primary-color: #4a6fa5;
   --secondary-color: #166088;
@@ -33,18 +30,26 @@
   --border-color: #dee2e6;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
+  --card-bg: #ffffff;
+  --footer-bg: #343a40;
+  --footer-text: #ffffff;
+  --footer-link: #cccccc;
 }
 
 .dark-mode {
   --primary-color: #5a8fd8;
   --secondary-color: #2c7bb6;
   --accent-color: #5cd6b3;
-  --light-color: #212529;
+  --light-color: #121212;
   --dark-color: #f8f9fa;
   --text-color: #f8f9fa;
   --text-light: #adb5bd;
   --border-color: #495057;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --card-bg: #2d3748;
+  --footer-bg: #1a202c;
+  --footer-text: #f7fafc;
+  --footer-link: #cbd5e0;
 }
 
 * {
@@ -153,7 +158,6 @@ section {
   color: var(--accent-color);
 }
 
-/* Header Styles */
 .header {
   position: fixed;
   top: 0;
@@ -168,7 +172,7 @@ section {
 }
 
 .dark-mode .header {
-  background-color: rgba(33, 37, 41, 0.95);
+  background-color: rgba(18, 18, 18, 0.95);
 }
 
 .header-content {
@@ -313,7 +317,6 @@ section {
   transform: rotate(-45deg) translate(7px, 6px);
 }
 
-/* Hero Styles */
 .hero {
   padding-top: 120px;
   padding-bottom: 80px;
@@ -342,6 +345,7 @@ section {
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 15px;
+  color: var(--text-color);
 }
 
 .hero-role {
@@ -354,6 +358,7 @@ section {
   font-size: 1.1rem;
   margin-bottom: 30px;
   max-width: 600px;
+  color: var(--text-color);
 }
 
 .hero-buttons {
@@ -431,7 +436,6 @@ section {
   -webkit-overflow-scrolling: touch;
 }
 
-/* About Styles */
 .about-content {
   display: flex;
   gap: 50px;
@@ -451,6 +455,7 @@ section {
 .about-text p {
   margin-bottom: 20px;
   font-size: 1.1rem;
+  color: var(--text-color);
 }
 
 .about-actions {
@@ -505,6 +510,10 @@ section {
   transition: var(--transition);
 }
 
+.dark-mode .education-item {
+  background-color: rgba(90, 143, 216, 0.1);
+}
+
 .education-item:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow);
@@ -525,6 +534,7 @@ section {
   margin-bottom: 10px;
   padding-left: 15px;
   position: relative;
+  color: var(--text-color);
 }
 
 .availability p:before {
@@ -539,17 +549,13 @@ section {
 }
 
 .profile-card {
-  background-color: white;
+  background-color: var(--card-bg);
   border-radius: 8px;
   box-shadow: var(--shadow);
   overflow: hidden;
   position: sticky;
   top: 100px;
   transition: var(--transition);
-}
-
-.dark-mode .profile-card {
-  background-color: #2c3034;
 }
 
 .profile-header {
@@ -610,6 +616,10 @@ section {
   touch-action: manipulation;
 }
 
+.dark-mode .resume-link {
+  background-color: rgba(90, 143, 216, 0.2);
+}
+
 .resume-link:hover,
 .resume-link:focus {
   background-color: var(--primary-color);
@@ -623,7 +633,6 @@ section {
   font-size: 1rem;
 }
 
-/* Skills Styles */
 .skills-content {
   display: flex;
   gap: 50px;
@@ -652,6 +661,7 @@ section {
 
 .skill-name {
   font-weight: 600;
+  color: var(--text-color);
 }
 
 .skill-bar {
@@ -678,6 +688,7 @@ section {
 
 .soft-skill-item {
   background-color: rgba(79, 195, 161, 0.1);
+  color: var(--text-color);
   padding: 15px;
   border-radius: 8px;
   text-align: center;
@@ -685,6 +696,10 @@ section {
   transition: var(--transition);
   cursor: default;
   user-select: none;
+}
+
+.dark-mode .soft-skill-item {
+  background-color: rgba(92, 214, 179, 0.2);
 }
 
 .soft-skill-item:hover {
@@ -705,6 +720,7 @@ section {
 
 .tool-item {
   background-color: rgba(74, 111, 165, 0.1);
+  color: var(--text-color);
   padding: 10px;
   border-radius: 5px;
   text-align: center;
@@ -714,12 +730,19 @@ section {
   user-select: none;
 }
 
+.dark-mode .tool-item {
+  background-color: rgba(90, 143, 216, 0.2);
+}
+
 .tool-item:hover {
   background-color: rgba(74, 111, 165, 0.2);
   transform: translateY(-2px);
 }
 
-/* Projects Styles */
+.dark-mode .tool-item:hover {
+  background-color: rgba(90, 143, 216, 0.3);
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -728,17 +751,13 @@ section {
 }
 
 .project-card {
-  background-color: white;
+  background-color: var(--card-bg);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-}
-
-.dark-mode .project-card {
-  background-color: #2c3034;
 }
 
 .project-card:hover,
@@ -796,6 +815,10 @@ section {
   user-select: none;
 }
 
+.dark-mode .tech-tag {
+  background-color: rgba(90, 143, 216, 0.2);
+}
+
 .project-links {
   display: flex;
   gap: 15px;
@@ -814,6 +837,10 @@ section {
   border-radius: 8px;
 }
 
+.dark-mode .github-section {
+  background-color: rgba(90, 143, 216, 0.1);
+}
+
 .github-section h3 {
   margin-bottom: 15px;
   color: var(--primary-color);
@@ -824,7 +851,6 @@ section {
   color: var(--text-light);
 }
 
-/* Contact Styles */
 .contact-content {
   display: flex;
   gap: 50px;
@@ -847,6 +873,7 @@ section {
 .contact-info p {
   margin-bottom: 30px;
   font-size: 1.1rem;
+  color: var(--text-color);
 }
 
 .contact-details {
@@ -866,6 +893,10 @@ section {
   background-color: rgba(74, 111, 165, 0.05);
 }
 
+.dark-mode .contact-item:hover {
+  background-color: rgba(90, 143, 216, 0.1);
+}
+
 .contact-icon {
   width: 50px;
   height: 50px;
@@ -882,6 +913,7 @@ section {
 
 .contact-text h4 {
   margin-bottom: 5px;
+  color: var(--text-color);
 }
 
 .contact-text a {
@@ -904,6 +936,10 @@ section {
   padding: 15px;
   background-color: rgba(79, 195, 161, 0.1);
   border-radius: 8px;
+}
+
+.dark-mode .availability-status {
+  background-color: rgba(92, 214, 179, 0.2);
 }
 
 .status-indicator {
@@ -936,6 +972,7 @@ section {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
+  color: var(--text-color);
 }
 
 .form-group input,
@@ -947,7 +984,7 @@ section {
   font-family: inherit;
   font-size: 1rem;
   transition: var(--transition);
-  background-color: var(--light-color);
+  background-color: var(--card-bg);
   color: var(--text-color);
   -webkit-appearance: none;
   appearance: none;
@@ -958,6 +995,11 @@ section {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(90, 143, 216, 0.3);
 }
 
 .form-group textarea {
@@ -1006,21 +1048,24 @@ section {
   border: 1px solid #c3e6cb;
 }
 
+.dark-mode .form-message.success {
+  color: #d4edda;
+}
+
 .form-message.error {
   background-color: rgba(220, 53, 69, 0.1);
   color: #721c24;
   border: 1px solid #f5c6cb;
 }
 
-/* Footer Styles */
-.footer {
-  background-color: var(--dark-color);
-  color: #fff;
-  padding: 60px 0 20px;
+.dark-mode .form-message.error {
+  color: #f8d7da;
 }
 
-.dark-mode .footer {
-  background-color: #1a1a1a;
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 60px 0 20px;
 }
 
 .footer-content {
@@ -1033,20 +1078,20 @@ section {
 .footer-logo .logo-text {
   font-size: 24px;
   font-weight: bold;
-  color: #4a90e2;
+  color: var(--primary-color);
   margin-bottom: 10px;
   display: block;
 }
 
 .footer-logo p {
-  color: #ccc;
+  color: var(--footer-link);
   margin-top: 5px;
 }
 
 .footer-links h4,
 .footer-social h4,
 .footer-resume h4 {
-  color: #4a90e2;
+  color: var(--primary-color);
   margin-bottom: 20px;
   font-size: 18px;
 }
@@ -1060,11 +1105,10 @@ section {
   margin-bottom: 10px;
 }
 
-/* Footer Link Buttons */
 .footer-link-btn {
   background: none;
   border: none;
-  color: #ccc;
+  color: var(--footer-link);
   cursor: pointer;
   font-size: 1rem;
   font-family: inherit;
@@ -1077,12 +1121,12 @@ section {
 
 .footer-link-btn:hover,
 .footer-link-btn:focus {
-  color: #4a90e2;
+  color: var(--primary-color);
   outline: none;
 }
 
 .footer-links a {
-  color: #ccc;
+  color: var(--footer-link);
   text-decoration: none;
   transition: color 0.3s ease;
   display: inline-block;
@@ -1091,12 +1135,12 @@ section {
 
 .footer-links a:hover,
 .footer-links a:focus {
-  color: #4a90e2;
+  color: var(--primary-color);
   outline: none;
 }
 
 .footer-resume p {
-  color: #ccc;
+  color: var(--footer-link);
   margin-bottom: 15px;
   font-size: 14px;
 }
@@ -1104,13 +1148,13 @@ section {
 .resume-button {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #4a90e2;
+  background-color: var(--primary-color);
   color: white;
   text-decoration: none;
   border-radius: 5px;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: 2px solid #4a90e2;
+  border: 2px solid var(--primary-color);
   cursor: pointer;
   margin-bottom: 10px;
   width: 100%;
@@ -1121,13 +1165,12 @@ section {
 .resume-button:hover,
 .resume-button:focus {
   background-color: transparent;
-  color: #4a90e2;
+  color: var(--primary-color);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 4px 12px rgba(74, 111, 165, 0.3);
   outline: none;
 }
 
-/* Social Icons - UPDATED FOR BUTTONS */
 .social-icons {
   display: flex;
   gap: 15px;
@@ -1139,9 +1182,9 @@ section {
   justify-content: center;
   width: 44px;
   height: 44px;
-  background-color: #2c2c2c;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  color: #fff;
+  color: var(--footer-text);
   font-size: 18px;
   transition: all 0.3s ease;
   border: none;
@@ -1152,21 +1195,20 @@ section {
 
 .social-icon-btn:hover,
 .social-icon-btn:focus {
-  background-color: #4a90e2;
+  background-color: var(--primary-color);
   transform: translateY(-3px);
   outline: none;
 }
 
-/* Keep old social icon styles for anchor tags */
 .social-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
-  background-color: #2c2c2c;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  color: #fff;
+  color: var(--footer-text);
   font-size: 18px;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -1174,7 +1216,7 @@ section {
 
 .social-icons a:hover,
 .social-icons a:focus {
-  background-color: #4a90e2;
+  background-color: var(--primary-color);
   transform: translateY(-3px);
   outline: none;
 }
@@ -1182,8 +1224,8 @@ section {
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
-  border-top: 1px solid #333;
-  color: #888;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--footer-link);
   font-size: 14px;
 }
 
@@ -1191,7 +1233,6 @@ section {
   margin: 5px 0;
 }
 
-/* Mobile Navigation Overlay */
 .mobile-nav-overlay {
   position: fixed;
   top: 0;
@@ -1210,7 +1251,6 @@ section {
   visibility: visible;
 }
 
-/* Responsive Styles */
 @media (max-width: 992px) {
   .hero-content,
   .about-content,
@@ -1398,7 +1438,6 @@ section {
   }
 }
 
-/* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
   .btn:hover,
   .btn:focus,
@@ -1435,7 +1474,6 @@ section {
   }
 }
 
-/* Prevent zoom on input focus on iOS */
 @media screen and (max-width: 768px) {
   input,
   select,
@@ -1444,12 +1482,10 @@ section {
   }
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Focus styles for accessibility */
 *:focus {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
@@ -1464,7 +1500,6 @@ html {
   outline-offset: 2px;
 }
 
-/* Submit button loading state improvements */
 .submit-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
@@ -1473,4 +1508,26 @@ html {
 .submit-btn:disabled:hover {
   transform: none;
   box-shadow: none;
+}
+
+.dark-mode .code-snippet {
+  background-color: #1a1a1a;
+  color: #f8f9fa;
+}
+
+.dark-mode .mobile-nav-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode .nav {
+  background-color: var(--light-color);
+}
+
+.dark-mode .profile-card,
+.dark-mode .project-card,
+.dark-mode .education-item,
+.dark-mode .soft-skill-item,
+.dark-mode .tool-item,
+.dark-mode .contact-item {
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
