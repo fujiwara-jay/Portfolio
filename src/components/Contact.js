@@ -152,7 +152,6 @@ const Contact = () => {
             
             <div className="availability-status">
               <div className="status-indicator available"></div>
-              <p>Available for OJT starting January 2026</p>
             </div>
           </div>
           
