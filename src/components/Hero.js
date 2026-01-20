@@ -8,11 +8,14 @@ const Hero = () => {
           <div className="hero-text">
             <h4 className="hero-subtitle">IT Student | OJT Portfolio</h4>
             <h1 className="hero-title">Hi, I'm <span className="highlight">Julian Jr, Gazzingan</span></h1>
-            <h2 className="hero-role">With Background From My School in Web Developer</h2>
+            <h2 className="hero-role">An aspiring Web Developer</h2>
             <p className="hero-description">
-              Information Technology student have background and pursuing in web development, 
-              currently seeking an On-the-Job Training opportunity to apply 
-              and expand my skills in real-world projects.
+               I am an Information Technology student with a solid 
+               background in web development and a strong passion for 
+               building functional and user-friendly websites. I am currently 
+               seeking an On-the-Job Training (OJT) opportunity where I can apply my 
+               technical skills, gain hands-on experience, and further develop my expertise 
+               by contributing to real-world projects.
             </p>
             <div className="hero-buttons">
               <a href="#projects" className="btn btn-primary">View Projects</a>
