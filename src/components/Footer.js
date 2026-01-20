@@ -5,8 +5,7 @@ const Footer = () => {
   const resumePath = "https://drive.google.com/file/d/11fcZHU3KR4jTBHzbi-bELn5oAYG1jKY7/view?usp=sharing";
 
   // Function to handle smooth scrolling
-  const handleScrollTo = (sectionId, e) => {
-    e.preventDefault();
+  const handleScrollTo = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -25,11 +24,11 @@ const Footer = () => {
           <div className="footer-links">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#home" onClick={(e) => handleScrollTo('home', e)}>Home</a></li>
-              <li><a href="#about" onClick={(e) => handleScrollTo('about', e)}>About</a></li>
-              <li><a href="#skills" onClick={(e) => handleScrollTo('skills', e)}>Skills</a></li>
-              <li><a href="#projects" onClick={(e) => handleScrollTo('projects', e)}>Projects</a></li>
-              <li><a href="#contact" onClick={(e) => handleScrollTo('contact', e)}>Contact</a></li>
+              <li><button className="footer-link-btn" onClick={() => handleScrollTo('home')}>Home</button></li>
+              <li><button className="footer-link-btn" onClick={() => handleScrollTo('about')}>About</button></li>
+              <li><button className="footer-link-btn" onClick={() => handleScrollTo('skills')}>Skills</button></li>
+              <li><button className="footer-link-btn" onClick={() => handleScrollTo('projects')}>Projects</button></li>
+              <li><button className="footer-link-btn" onClick={() => handleScrollTo('contact')}>Contact</button></li>
             </ul>
           </div>
           
