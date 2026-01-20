@@ -50,14 +50,14 @@ const About = () => {
               <div className="education-item">
                 <h5>Bachelor of Science in Information Technology</h5>
                 <p className="institution">Pateros Technological College</p>
-                <p className="duration">2026 - Present (Expected Graduation: July 2026)</p>
+                <p className="duration">2022 - Present (Expected Graduation: July 2026)</p>
                 <p className="gpa">Current GPA: Ongoing</p>
               </div>
             </div>
             
             <div className="availability">
               <h4>OJT Availability</h4>
-              <p>Available for On-the-Job Training starting January or February 2026</p>
+              <p>Available for On-the-Job Training starting January 2026</p>
               <p>Duration: 600 hours (Flexible schedule)</p>
               <p>Preference: On-site in Taguig or Makati Area</p>
             </div>
