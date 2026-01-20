@@ -12,11 +12,6 @@ const Footer = () => {
     }
   };
 
-  // Function to open external links safely
-  const openExternalLink = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <footer className="footer">
       <div className="container">
@@ -54,20 +49,22 @@ const Footer = () => {
           <div className="footer-social">
             <h4>Connect With Me</h4>
             <div className="social-icons">
-              <button 
-                className="social-icon-btn"
-                onClick={() => openExternalLink('https://github.com/fujiwara-jay')}
+              <a 
+                href="https://github.com/fujiwara-jay" 
+                target="_blank" 
+                rel="noopener noreferrer" 
                 aria-label="GitHub"
               >
                 <i className="fab fa-github"></i>
-              </button>
-              <button 
-                className="social-icon-btn"
-                onClick={() => openExternalLink('https://www.facebook.com/jayrfujiwara/')}
+              </a>
+              <a 
+                href="https://www.facebook.com/jayrfujiwara/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
                 aria-label="Facebook"
               >
                 <i className="fab fa-facebook"></i>
-              </button>
+              </a>
             </div>
           </div>
         </div>
