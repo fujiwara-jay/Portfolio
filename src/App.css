@@ -1,3 +1,26 @@
+/* Loading spinner for submit button */
+.fa-spin {
+  animation: fa-spin 1s infinite linear;
+}
+
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Form note styling */
+.form-note {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-align: center;
+  font-style: italic;
+}
+
 /* App.css - ALL STYLES IN ONE FILE */
 :root {
   --primary-color: #4a6fa5;
@@ -947,6 +970,15 @@ section {
   padding: 15px;
   font-size: 1.1rem;
   touch-action: manipulation;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.submit-btn .fa-spinner {
+  animation: fa-spin 1s infinite linear;
 }
 
 .form-message {
@@ -1430,4 +1462,15 @@ html {
 *:focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
+}
+
+/* Submit button loading state improvements */
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submit-btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
 }

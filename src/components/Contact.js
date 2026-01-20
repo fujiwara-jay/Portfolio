@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import emailjs from '@emailjs/browser'; // UPDATED IMPORT
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +14,8 @@ const Contact = () => {
     success: false,
     message: '',
   });
+
+  const form = useRef();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,43 +36,42 @@ const Contact = () => {
       return;
     }
     
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus({
+        success: false,
+        message: 'Please enter a valid email address.',
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
     
-    // EmailJS configuration - UPDATE THESE WITH YOUR ACTUAL VALUES
-    const serviceID = 'service_u72gekl';
-    const templateID = 'template_zgx3itf';
-    const userID = 'nAWh26Kn6JOzRug6s';
+    // EmailJS configuration - USE YOUR ACTUAL EMAILJS CREDENTIALS HERE
+    // You need to:
+    // 1. Create an account at https://www.emailjs.com/
+    // 2. Create an email service (Gmail)
+    // 3. Create an email template
+    // 4. Get your Service ID, Template ID, and Public Key
     
-    // For now, simulate success (remove this when you have actual EmailJS credentials)
-    setTimeout(() => {
-      console.log('Email would be sent with:', { serviceID, templateID, userID });
-      setSubmitStatus({
-        success: true,
-        message: 'Your message has been sent successfully! I will get back to you soon.',
-      });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-      
-      setIsSubmitting(false);
-      
-      // Reset status after 5 seconds
-      setTimeout(() => {
-        setSubmitStatus({
-          success: false,
-          message: '',
-        });
-      }, 5000);
-    }, 1500);
+    const serviceID = 'service_u72gekl'; // Replace with your service ID
+    const templateID = 'template_zgx3itf'; // Replace with your template ID
+    const userID = 'nAWh26Kn6JOzRug6s'; // Replace with your Public Key (this is safe to expose)
     
-    /*
-    // Uncomment this when you have actual EmailJS credentials:
-    emailjs.send(serviceID, templateID, formData, userID)
+    // Prepare template parameters
+    const templateParams = {
+      to_name: 'Julian Gazzingan', // Your name
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      reply_to: formData.email,
+      to_email: 'gazzinganjayr@gmail.com', // Your email address
+    };
+    
+    // Send email using EmailJS
+    emailjs.send(serviceID, templateID, templateParams, userID)
       .then((result) => {
         console.log('Email sent successfully:', result.text);
         setSubmitStatus({
@@ -98,13 +99,12 @@ const Contact = () => {
         console.error('Error sending email:', error);
         setSubmitStatus({
           success: false,
-          message: 'There was an error sending your message. Please try again later or email me directly.',
+          message: 'There was an error sending your message. Please try again later or email me directly at gazzinganjayr@gmail.com',
         });
       })
       .finally(() => {
         setIsSubmitting(false);
       });
-    */
   };
 
   return (
@@ -152,6 +152,7 @@ const Contact = () => {
             
             <div className="availability-status">
               <div className="status-indicator available"></div>
+              <p>Currently available for OJT opportunities</p>
             </div>
           </div>
           
@@ -164,7 +165,7 @@ const Contact = () => {
               </div>
             )}
             
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form ref={form} className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Full Name *</label>
                 <input
@@ -234,12 +235,6 @@ const Contact = () => {
                   'Send Message'
                 )}
               </button>
-              
-              <div className="form-note">
-                <small>
-                  Note: Form simulation active. To enable real email sending, sign up for EmailJS and update the Contact.js file.
-                </small>
-              </div>
             </form>
           </div>
         </div>
