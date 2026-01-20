@@ -12,6 +12,11 @@ const Footer = () => {
     }
   };
 
+  // Function to open external links safely
+  const openExternalLink = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <footer className="footer">
       <div className="container">
@@ -39,7 +44,7 @@ const Footer = () => {
               href={resumePath}
               className="resume-button"
               target="_blank" 
-              rel="noopener noreferrer nofollow"
+              rel="noopener noreferrer"
               download="GAZZINGAN_JULIAN_JR_RESUME.pdf"
             >
               View Resume
@@ -49,12 +54,20 @@ const Footer = () => {
           <div className="footer-social">
             <h4>Connect With Me</h4>
             <div className="social-icons">
-              <a href="https://github.com/fujiwara-jay" target="_blank" rel="noopener noreferrer nofollow" aria-label="GitHub">
+              <button 
+                className="social-icon-btn"
+                onClick={() => openExternalLink('https://github.com/fujiwara-jay')}
+                aria-label="GitHub"
+              >
                 <i className="fab fa-github"></i>
-              </a>
-              <a href="https://www.facebook.com/jayrfujiwara/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook">
+              </button>
+              <button 
+                className="social-icon-btn"
+                onClick={() => openExternalLink('https://www.facebook.com/jayrfujiwara/')}
+                aria-label="Facebook"
+              >
                 <i className="fab fa-facebook"></i>
-              </a>
+              </button>
             </div>
           </div>
         </div>
